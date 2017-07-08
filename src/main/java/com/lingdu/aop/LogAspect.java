@@ -4,6 +4,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
  * 日志切面
+ * 环绕通知
  * @author LingDu
  */
 public class LogAspect {

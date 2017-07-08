@@ -11,6 +11,7 @@ public class SpringTest {
 		//UserService service = SpringUtil.getBean(UserService.class);
 		UserService service = (UserService) SpringUtil.getBean("userService");
 		User user = (User) SpringUtil.getBean("user");
+		
 		System.out.println("service : " + service.showUser(user));;
 	}
 }

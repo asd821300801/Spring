@@ -10,7 +10,8 @@ public class UserServiceImp implements UserService {
 
 	
 	public String showUser(User user) {
-		//System.out.println(user.getId() + "," + user.getName());
+	
+		//int i = 1/0;  //模拟一个异常
 		return user.getId() + "," + user.getName();
 		
 	}

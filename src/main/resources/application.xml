@@ -17,7 +17,8 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-	<bean id="logAspect" class="com.lingdu.aop.LogAspect"></bean>
+	<!-- 日志切面，环绕通知 -->
+	<!-- <bean id="logAspect" class="com.lingdu.aop.LogAspect"></bean>
 	<aop:config>
 		<aop:pointcut expression="execution(* com.lingdu.service.*.*(..))" id="logPointcut" />
 		<aop:aspect ref="logAspect">
@@ -26,8 +27,24 @@
 			
 		</aop:aspect>
 		
-	</aop:config>
+	</aop:config> -->
 
+
+	<!-- <bean id="timeAspect" class="com.lingdu.aop.TimeAspect"></bean>
+	<aop:config>
+		<aop:aspect id="doTimeAspect" ref="timeAspect">
+			<aop:pointcut expression="execution(* com.lingdu.service.*..*(..))" id="userServiceAspect"/>
+			<aop:before method="doBefore" pointcut-ref="userServiceAspect"/>
+			<aop:after method="doAfter" pointcut-ref="userServiceAspect"/>
+			<aop:after-throwing method="doThrowing" pointcut-ref="userServiceAspect" throwing="ex"/> throwing="ex" 不加上会出现异常
+			<aop:after-returning method="doAfterReturn" pointcut-ref="userServiceAspect" returning="result"/>
+		</aop:aspect>
+		
+	</aop:config> -->
+
+	<!-- 开启切面API模式 -->
+	<aop:aspectj-autoproxy proxy-target-class="false"/>
+	
 	<bean id="user" class="com.lingdu.domain.User">
 		<property name="id" value="1"></property>
 		<property name="name" value="LingDu"></property>
